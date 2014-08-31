@@ -8,5 +8,9 @@ Maintainer: Benoît D'Angelo <dev@dangelob.eu>
 Description: This package provides some (hopefully) useful tools to process m70
     data files
 License: GPL-3
+VignetteBuilder: knitr
+Suggests:
+    knitr,
+    testthat
 Imports:
     stringr
