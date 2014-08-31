@@ -58,11 +58,9 @@ m70concat <- function(path, id="name", inFormat="m70"){
 
   #Check for timestamp col
   if ("timestamp" %in% colnames(df)){
-    #     cat("\n timestamp column is present")
   }else{
     df <- timestp(df, replace=FALSE)
   }
-  
   df <- chk_keep(df)
   
   return(df)
