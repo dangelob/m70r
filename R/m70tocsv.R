@@ -22,32 +22,22 @@ m70tocsv <- function(path, newdir=T, dirname="CO2_csv"){
     savdir <- path
   }
   
-  # Création de la liste des fichiers issue de la sonde Vaisala ##
-  file_list <- list.files(path, pattern="*.m70")
+  file_list <- list.files(path, pattern="*.m70") # file list creation
   
-  #Nombre de fichier :
+  # file number stat setup
   nbFile <- length(file_list)
-  
-  # Mise à 0 des compteurs
-  cpt_file <- 0
+  cpt_file <- 0 # to count how many files are treated
   
   # For all files in the directory
   for (i in file_list){
     cpt_file <- cpt_file + 1
-    # Création du chemin vers le fichier n
-    file <- paste(path,i,sep="")
-    # Lecture du fichier n en ommettant les 9 1re lignes
+    file <- paste(path,i,sep="") # complete path to file
     df <- read.m70(file)
-#     df <- read.table(file, sep="", skip=9)
-    # Check column order
-#     df <- colchk(df)
-    
-    # Création du chemin d'écriture
+
     savepath <- paste(savdir, 
                       strsplit(basename(file), "[.]")[[1]][1],
-                      ".csv", sep="")
+                      ".csv", sep="") # save path
     write.csv(df, savepath, row.names=FALSE, quote=FALSE)
   }
-  # Comptage des fichiers traités
   cat("Treated files: ", cpt_file, "/", nbFile, "\n")
-} # Function end
+}
