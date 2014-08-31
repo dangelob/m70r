@@ -1,7 +1,48 @@
 m70r
 ====
 
-Easy m70 files treatement
+m70r is a toolbox to handle m70 files (hopefully) easily.
+This package was developped for a personnal need, so there is probably plenty rooms for improvement.
+
+You can install: 
+
+* the latest development version from github with (devtools package needed) 
+
+```r
+devtools::install_github("dangelob/m70r")`
+```
+* The package is not available on CRAN
+
+## How to use it ? 
+
+The starting point is that you have a directory full of *.m70 file.
+
+* The `m70setup` function allow to read all the files and concatenate them. 
+```r
+df <- m70setup
+```
+* The `pdfdplot` function generate diagnostic plots based on the files. 
+```r
+pdfdplot(df)
+```
+* The `regsetup` function allow to select the data you want for the regression.
+You probably want to iterate with pdfplot until you are satisfied with the regression
+```r
+regsetup(df)
+```
+* The `extrcFlux` function do the regression and extract flux (+ other usefull data) 
+```r
+extrcFlux(df)
+```
+* The `getNF` function calculate a net flux based on chamber caracteristics
+```r
+extrcFlux(df)
+```
+
+You might just want to convert a bunch of m70 to csv : 
+```r
+m70tocsv(path/to/m70/directory)
+```
 
 ***
 
