@@ -13,7 +13,7 @@
 # Mettre la fonction a disposition quand même dans le package
 
 m70setup <- function(path){
-  m70filename(path)
+  chk_filename(path)
   df <- m70concat(path, id="name")
   return(df)
 }
