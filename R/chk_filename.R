@@ -27,10 +27,6 @@ chk_filename <- function(dirpath){
     if(nchar(strsplit(i, "_")[[1]][1]) == 12){
       cpt_rename <- cpt_rename + 1 
       baseClean <- splt_m70(i, "baseClean")
-      #Traitement pour renommer
-      #       dateFile <- splt_m70(i, "date")
-      #       heureFile <- splt_m70(i, "heure") # l'heure est renvoyé avec le 0 si besoin
-      #       newname <- paste(dateFile, " ", heureFile, ".m70", sep="")
       newname <- paste(baseClean, ".m70", sep="")
       savepath <- paste(dirpath,newname, sep="")
       oldpath <- paste(dirpath, i, sep="")
