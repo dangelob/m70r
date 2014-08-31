@@ -1,0 +1,9 @@
+Package: m70r
+Type: Package
+Title: Easy m70 files treatement
+Version: 0.1
+Date: 2014-08-31
+Author: Benoît D'Angelo
+Maintainer: Benoît D'Angelo <dev@dangelob.eu>
+Description: This package provides some (hopefully) useful tools to process m70 data files
+License: GPL-3
