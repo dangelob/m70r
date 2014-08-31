@@ -19,7 +19,7 @@ The starting point is that you have a directory full of *.m70 file.
 
 * The `m70setup` function allow to read all the files and concatenate them. 
 ```r
-df <- m70setup
+df <- m70setup(path/to/m70/directory)
 ```
 * The `pdfdplot` function generate diagnostic plots based on the files. 
 ```r
