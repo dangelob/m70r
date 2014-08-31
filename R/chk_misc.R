@@ -22,10 +22,8 @@ chk_eop <- function(path){
 }
 
 # Check if timestamp col exist and if not create it
-#Check for timestamp col
 chk_ts <- function(df){
   if ("timestamp" %in% colnames(df)){
-    #     cat("\n timestamp column is present")
   }else{
     df <- timestp(df, F)
   }
