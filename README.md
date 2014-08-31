@@ -19,14 +19,15 @@ Easy m70 files treatement
 * dplot
   input : df contenant une mesure
   output : graphes de diagnostique des régressions
-* regselect
+* regsetup
   input : df à traiter + un fichier de traitement
   output : un df avec une colonne keep (TRUE/FALSE) renseigné
 * extrcFlux
   input : df (fileid, timestamp, date, time, RH, temperature, CO2, keep)
   output : df (filename, fluxCO2, sqR, temp.mean, temp.sd, hr.mean, hr.sd)
 * getNF
-  input : 
+  input : Rawflux + chamber characteristics + atmospheric pressure + temperature
+  output : net CO2 flux
 
 ### Middle level
 * chk_filename
@@ -40,14 +41,7 @@ Easy m70 files treatement
   output : df contenant l'ensemble des données
 
 ### Low level
-* misc
+* misc  
 * chk_col
 * splt_m70
 * timestp
-<<<<<<< HEAD
-=======
-
-### TRASH ?
-CO2vis
-***
->>>>>>> 4f09b33f66f36532e728963cd85c2dda619fc9cb
