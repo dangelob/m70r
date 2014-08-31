@@ -1,6 +1,7 @@
 #' Set up diagnostic plots
 #' 
-#' This function print a diagnostic plot
+#' This function print a diagnostic plot for multiple measurements
+#' A fileid column is necessary
 #'
 #' @param df data to proceed
 #' @param outname a name for the output pdf file, 
@@ -10,7 +11,7 @@
 #' the file
 #' 
 
-diagplot <- function(df, outname="diagPlot.pdf", outpath=NULL){
+pdfdplot <- function(df, outname="diagPlot.pdf", outpath=NULL){
   
   if(is.null(outpath)){ #
     dirls <- basename(list.dirs(getwd(), recursive=FALSE))
@@ -26,7 +27,7 @@ diagplot <- function(df, outname="diagPlot.pdf", outpath=NULL){
   
   pdf(savpath)
   for(i in unique(df$fileid)){
-    diagtmplt(df[which(df$fileid == i),], i)
+    dplot(df[which(df$fileid == i),], i)
   }  
   graphics.off()
 }
