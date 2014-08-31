@@ -8,6 +8,6 @@
 
 read.m70 <- function(path){
   df <- read.table(path, sep="", skip=9) # Read file without the 1st 9 lines
-  df <- colchk(df) # Check column order
+  df <- chk_col(df) # Check column order
   return(df) 
 }
