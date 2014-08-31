@@ -4,7 +4,7 @@
 #' 
 #'
 #' @param path path to the file to clean
-#' 
+#' @export
 
 read.m70 <- function(path){
   df <- read.table(path, sep="", skip=9) # Read file without the 1st 9 lines
