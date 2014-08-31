@@ -43,14 +43,14 @@ m70concat <- function(path, id="name", inFormat="m70"){
     # If we want to insert an ID for each file
     if(id == "name"){
       for (fileid in seq_along(file_list)){
-        ls[[fileid]] <- cbind(m70cleaner(file_list[fileid]), fileid=basename(file_list[fileid]))
+        ls[[fileid]] <- cbind(read.m70(file_list[fileid]), fileid=basename(file_list[fileid]))
       }
     }else if (id == "num"){
       for (fileid in seq_along(file_list)){
-        ls[[fileid]] <- cbind(m70cleaner(file_list[fileid]), fileid)  
+        ls[[fileid]] <- cbind(read.m70(file_list[fileid]), fileid)  
       }
     }else{
-      ls[[fileid]] <- m70cleaner(file_list[fileid])
+      ls[[fileid]] <- read.m70(file_list[fileid])
     }
   }
   
