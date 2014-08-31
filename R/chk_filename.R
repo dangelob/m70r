@@ -11,7 +11,7 @@
 chk_filename <- function(dirpath){
   
   # Check path format
-  dirpath <- chkeop(dirpath)
+  dirpath <- chk_eop(dirpath)
   
   file_list <- list.files(dirpath, pattern="*.m70")
   #Nombre de fichier :
