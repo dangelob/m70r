@@ -1,13 +1,13 @@
-#' Set up diag plot
+#' Diagnostic plot for m70 data
 #' 
-#' This function print a diag plot
+#' This function print diagnostic plots
 #'
 #' @param df data to proceed
 
 
 # TODO: insert an id for each file processed
 
-diagtmplt <- function(df, title="Main Title"){
+dplot <- function(df, title="Main Title"){
   title <- as.character(title)
   # Check if timestamp is present (and if not creation occur)
   df <- chk_ts(df)
