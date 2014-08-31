@@ -5,6 +5,7 @@
 #'
 #' @param path path to the file to clean
 #' 
+#' @export
 
 # TODO :
 # Format d'export

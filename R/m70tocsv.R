@@ -5,7 +5,7 @@
 #' @param path path to the directory to treat
 #' @param newdir if TRUE the file are saved in a new directory
 #' @param dirname a name for the output directory
-#' 
+#' @export
 
 # TODO :
 # Si dirname différent de défaut et newdir = F : Warning ou erreur

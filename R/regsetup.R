@@ -13,6 +13,7 @@
 #' @param df data to proceed
 #' @param path path to the setup file (working directory by defaut)
 #' @param file setup file name ("regselection.csv" by defaut)
+#' @export
 
 # TODO: insert an id for each file processed
 # TODO: create the file if he does not exit

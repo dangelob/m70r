@@ -8,6 +8,7 @@
 #' @param Hchb_mm Chamber height in millimeter
 #' @param Patm Atmospheric pressure in Pa
 #' @param T_Cel Temperature inside the chamber
+#' @export
 #' 
 getNF <- function(RF=.1, Dchb_mm=300, Hchb_mm=300, Patm=101300, T_Cel=25){
   # Constante

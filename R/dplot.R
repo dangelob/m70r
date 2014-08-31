@@ -3,7 +3,7 @@
 #' This function print diagnostic plots
 #'
 #' @param df data to proceed
-
+#' @export
 
 # TODO: insert an id for each file processed
 

@@ -9,7 +9,7 @@
 #' @param outpath a path to a directory to save the file
 #' by default a "output" directory is created in the working directory to store
 #' the file
-#' 
+#' @export
 
 pdfdplot <- function(df, outname="diagPlot.pdf", outpath=NULL){
   

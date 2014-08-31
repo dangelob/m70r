@@ -6,7 +6,7 @@
 #' directory 
 #'
 #' @param path Path to the directory to treat
-#' 
+#' @export
 
 ## TODO
 # Retrait de la copie en csv (m70tocsv) − DONE
