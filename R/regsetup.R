@@ -20,15 +20,15 @@
 
 regsetup <- function(df, path=getwd(), file="regselection.csv"){
   
-  path <- chk_eop(path)
-  file <- paste0(path,file)
+#   path <- chk_eop(path)
+  file <- file.path(path,file)
   
   # Check file existence and create a template it doesn't
   if (!file.exists(file)){
     init <- data.frame("fileid"=NA, "start"=NA, "end"=NA
                        , "other"=NA,"state"=NA)
     cat(paste0("file not found !\n Creating template in:\n", path))
-    write.csv(init, file.path(path, file), quote=FALSE, row.names = FALSE)
+    write.csv(init, file, quote=FALSE, row.names = FALSE)
   }else{
     slct <- read.csv(file,
                      sep=",",
@@ -37,11 +37,14 @@ regsetup <- function(df, path=getwd(), file="regselection.csv"){
     slct$other <- as.character(slct$other)
     slct[slct == ""] <- NA
     slct[is.na(slct)] <- 0
+    slct$fileid <- gsub("−", "-", slct$file)
     
     # Compute a list of the number of row for each fileid
     x <- unique(df$fileid)
-    nro <- unlist(lapply(x, function(x) sum(df$fileid==x)))
-    slct <- merge(slct, data.frame(fileid=x, nro=nro))
+#     nro <- unlist(lapply(x, function(x) sum(df$fileid==x)))
+#     slct <- merge(slct, data.frame(fileid=x, nro=nro))
+    nro <- unlist(lapply(x, function(x) NROW(df[df$fileid == x,])))
+    slct <- merge(slct, data.frame(fileid=x, nro=nro), all.x = TRUE, by = "fileid")
     # Ajout control sur colonne : NA >> 0 ; - >> 0
     mgdf <- data.frame()
     for (i in unique(slct$fileid)){
@@ -69,6 +72,6 @@ regsetup <- function(df, path=getwd(), file="regselection.csv"){
     df <- merge(df, mgdf, all.x=TRUE)
     df$keep[is.na(df$keep)] <- TRUE
     
-    return(df)
   }
+    return(df)
 }
