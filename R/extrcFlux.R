@@ -31,7 +31,18 @@ extrcFlux <- function(df){
     temp_sd=rep(NA, N), # température standard deviation
     RH=rep(NA, N), #humidité relative moyenne
     RH_sd=rep(NA, N), #humidité relative standard deviation
+    pvalue=rep(NA, N),
+    mtime=rep(NA, N),
     stringsAsFactors=FALSE) # String NON converti en facteur 
+  
+  # function to retrieve p-value
+  lmp <- function (modelobject) {
+    if (class(modelobject) != "lm") stop("Not an object of class 'lm' ")
+    f <- summary(modelobject)$fstatistic
+    p <- pf(f[1],f[2],f[3],lower.tail=F)
+    attributes(p) <- NULL
+    return(p)
+  }
   
   j <- 0
   for (i in unique(df$fileid)){
@@ -49,8 +60,11 @@ extrcFlux <- function(df){
     temp_sd <- sd(wdf$temperature, na.rm = TRUE)
     RH <- mean(wdf$RH, na.rm = TRUE)
     RH_sd <- sd(wdf$RH, na.rm = TRUE)
+    pvalue <- lmp(m)
+    mtime <- tail(wdf$tps, 1)-head(wdf$tps, 1)
     
-    newrow <- list(filename, rawCO2F, R2, temperature, temp_sd, RH, RH_sd)  
+    newrow <- list(filename, rawCO2F, R2, temperature, temp_sd, RH, RH_sd, 
+                   pvalue, mtime)  
     out[j,] <- newrow
   }
   return(out)
