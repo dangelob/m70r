@@ -50,7 +50,7 @@ If you don't specify these 2 parameters and have no "selection file", the functi
 
 __Warning:__ For now no control are done on want you enter to this file, so double check that there is no typo or weird things might happen.
 
-__Warning:__Consequently the csv file should use coma (",") as field separator and dots (".") as decimal point.
+__Warning:__ Consequently the csv file should use coma (",") as field separator and dots (".") as decimal point.
 * The `extrcFlux` function do the regression and extract flux (+ other usefull data) 
 ```r
 extrcFlux(df)
