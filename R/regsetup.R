@@ -41,8 +41,6 @@ regsetup <- function(df, path=getwd(), file="regselection.csv"){
     
     # Compute a list of the number of row for each fileid
     x <- unique(df$fileid)
-#     nro <- unlist(lapply(x, function(x) sum(df$fileid==x)))
-#     slct <- merge(slct, data.frame(fileid=x, nro=nro))
     nro <- unlist(lapply(x, function(x) NROW(df[df$fileid == x,])))
     slct <- merge(slct, data.frame(fileid=x, nro=nro), all.x = TRUE, by = "fileid")
     # Ajout control sur colonne : NA >> 0 ; - >> 0
