@@ -9,7 +9,7 @@ You can install:
 * the latest development version from github with (devtools package needed) 
 
 ```r
-devtools::install_github("dangelob/m70r")`
+devtools::install_github("dangelob/m70r")
 ```
 * The package is not available on CRAN
 
