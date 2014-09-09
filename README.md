@@ -42,16 +42,15 @@ You probably want to iterate with pdfplot until you are satisfied with the regre
 regsetup(df, path="path/to/regselection/file", file="regselectionfilename")
 ```
 
-__Warning:__ For now no control are done on want you enter to this file, so double check that there is no typo or weird things might happen.
-
-
-__Warning:__Consequently the csv file should use coma (",") as field separator and dots (".") as decimal point.
-
 Optionnal (but you also probably want to use them !):
 
     * path = "path/to/directory" (the working directory by default)
     * file = "filename" (regselection.csv by default)
 If you don't specify these 2 parameters and have no "selection file", the function is going to create one for you with the default parameters.  
+
+__Warning:__ For now no control are done on want you enter to this file, so double check that there is no typo or weird things might happen.
+
+__Warning:__Consequently the csv file should use coma (",") as field separator and dots (".") as decimal point.
 * The `extrcFlux` function do the regression and extract flux (+ other usefull data) 
 ```r
 extrcFlux(df)
