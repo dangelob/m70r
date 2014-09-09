@@ -17,6 +17,9 @@ extrcFlux <- function(df){
   # Check if timestamp is present (and if not creation occur)
   df <- chk_ts(df)
   
+  # Remove unwanted data (keep = FALSE)
+  df <- df[df$keep == TRUE,]
+  
   ## Création d'un dataframe vide dont nb lignes = nb fichier Vaisala
   N <- length(unique(df$fileid))
   out <- NULL
