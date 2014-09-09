@@ -50,7 +50,7 @@ extrcFlux(df)
 ```
 * The `getNF` function calculate a net flux based on chamber caracteristics
 ```r
-extrcFlux(df)
+getNF(RF = 3.4, Dchb_mm = 300, Hchb_mm = 300, Patm = 101300, T_Cel = 25)
 ```
 
 You might just want to convert a bunch of m70 to csv : 
