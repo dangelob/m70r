@@ -13,5 +13,4 @@ Suggests:
     knitr,
     testthat
 Imports:
-    stringr,
-    dplyr
+    stringr
