@@ -43,7 +43,29 @@ extrcFlux <- function(df){
     attributes(p) <- NULL
     return(p)
   }
-  
+
+# SLOWER
+#   get_param <- function (x) {
+#     m <- lm(CO2~tps, data = x)
+#     if (class(m) != "lm") stop("Not an object of class 'lm' ")
+#     R2 <- summary(m)$r.squared
+#     rawCO2F <- coef(m)[2]
+#     temperature <- mean(x$temperature, na.rm = TRUE)
+#     temp_sd <- sd(x$temperature, na.rm = TRUE)
+#     RH <- mean(x$RH, na.rm = TRUE)
+#     RH_sd <- sd(x$RH, na.rm = TRUE)
+#     pvalue <- lmp(m)
+#     mtime <- tail(x$tps, 1)-head(x$tps, 1)
+#     result <- data.frame(rawCO2F=rawCO2F, R2=R2, temperature=temperature,
+#                          temp_sd=temp_sd, RH=RH, RH_sd=RH_sd,
+#                          pvalue=pvalue, mtime=mtime)
+#     return(result)
+#   }
+# p <-  df %>%
+#     group_by(fileid) %>%
+#     mutate(tps = posixctTOsec(timestamp)) %>%
+#     do(get_param(.))
+
   j <- 0
   for (i in unique(df$fileid)){
     j <- j + 1
