@@ -38,13 +38,15 @@ Optionnal (but you probably want to use them !):
     * state: Useless for now, leave blank
 You probably want to iterate with pdfplot until you are satisfied with the regression.
 
-__Warning:__ For now no control are done on want you enter to this file, so double check that there is no typo or weird things might happen.
-
-__Warning:__Consequently the csv file should use coma (",") as field separator and dots (".") as decimal point.
-
 ```r
 regsetup(df, path="path/to/regselection/file", file="regselectionfilename")
 ```
+
+__Warning:__ For now no control are done on want you enter to this file, so double check that there is no typo or weird things might happen.
+
+
+__Warning:__Consequently the csv file should use coma (",") as field separator and dots (".") as decimal point.
+
 Optionnal (but you also probably want to use them !):
 
     * path = "path/to/directory" (the working directory by default)
