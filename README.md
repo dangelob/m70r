@@ -29,6 +29,7 @@ Optionnal (but you probably want to use them !):
 
     * outname = custom name for the file (default: "diagPlot.pdf"), 
     * outpath = path to directory in which you want to save the file
+    
 * The `regsetup` function allow to select the data you want for the regression, throught a "selection file". The selection file is a file to specify which data points you want to dicard. There are 5 columns in the "selection file"
     * fileid: The file name (as the titles of the diagnostic plots are written)
     * start: Number of point you want to discard at the beginning of the measurement
@@ -40,6 +41,7 @@ You probably want to iterate with pdfplot until you are satisfied with the regre
 __Warning:__ For now no control are done on want you enter to this file, so double check that there is no typo or weird things might happen.
 
 __Warning:__Consequently the csv file should use coma (",") as field separator and dots (".") as decimal point.
+
 ```r
 regsetup(df, path="path/to/regselection/file", file="regselectionfilename")
 ```
