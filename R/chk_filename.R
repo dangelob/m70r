@@ -39,8 +39,8 @@ chk_filename <- function(dirpath){
   
   cpt_total <- (cpt_rename + cpt_norename)
   
-  cat("\nTreated files: ", cpt_file,"/", nbFile, "\n")
+  cat("Treated files: ", cpt_file,"/", nbFile, "\n")
   cat("Renamed files: ", cpt_rename,"/", nbFile, "\n")
   cat("Not renamed files: ", cpt_norename, "/", nbFile, "\n")
-  cat("Total (renamed + not renamed): ", cpt_total, "/", nbFile, "\n")
+  cat("Total (renamed + not renamed): ", cpt_total, "/", nbFile, "\n\n")
 }
