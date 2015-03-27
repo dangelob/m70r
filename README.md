@@ -15,7 +15,7 @@ devtools::install_github("dangelob/m70r")
 
 ## How to use it ? 
 
-The starting point is that you have a directory full of *.m70 file.
+The starting point is that you have a directory full of *.m70 file. Then use the function in the order:
 
 ### The `m70setup()` function
 allow to read all the files and concatenate them. 
@@ -57,27 +57,35 @@ If you don't specify these 2 parameters and have no "selection file", the functi
 __Warning:__ For now no control are done on want you enter to this file, so double check that there is no typo or weird things might happen.
 
 __Warning:__ Consequently the csv file should use coma (",") as field separator and dots (".") as decimal point.
-* The `extrcFlux()` function 
+### The `extrcFlux()` function 
 do the regression (linear, OLS) and extract flux (the slope).
 ```r
 extrcFlux(df)
 ```
 The function will return a data.frame containing the following elements:
-    * filename: the source file of the treated measurement
-    * rawCO2F: the slope of the linear regression (the raw fluxes)
-    * R2: the coefficient of determination
-    * temperature: the mean temperature from the HMP75 probe
-    * temp_sd: the standard deviation of the temperature from the HMP75 probe
-    * RH: the relative humidity from the HMP75 probe
-    * RH_sd: the standar deviation of the temperature from the HMP75 probe
-    * pvalue: the p-value of the regression
-    * mtime: the measurement time during which the regression is done (in seconds)
+* filename: the source file of the treated measurement
+* rawCO2F: the slope of the linear regression (the raw fluxes)
+* R2: the coefficient of determination
+* temperature: the mean temperature from the HMP75 probe
+* temp_sd: the standard deviation of the temperature from the HMP75 probe
+* RH: the relative humidity from the HMP75 probe
+* RH_sd: the standar deviation of the temperature from the HMP75 probe
+* pvalue: the p-value of the regression
+* mtime: the measurement time during which the regression is done (in seconds)
 
 ### The `getNF()` function
-calculate a net flux based on chamber caracteristics
+calculate a net flux based on chamber caracteristics:
 ```r
 getNF(RF = 3.4, Dchb_mm = 300, Hchb_mm = 300, Patm = 101300, T_Cel = 25)
 ```
+with:
+* RF: the raw fluxes (usually you want "rawCO2F" from the previous function)
+* Dchb_mm: The chamber diameter in millimetres 
+* Hchb_mm: the chamber height in millimetres
+* Patm: the atmospheric pressure in Pascals
+* T_Cel: the temperature in celcius degree
+
+Normally at this point you should have the net fluxes in a dataframe
 
 ### Other functions
 
