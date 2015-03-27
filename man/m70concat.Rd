@@ -4,14 +4,14 @@
 \alias{m70concat}
 \title{Concat files}
 \usage{
-m70concat(path, id = "name", inFormat = "m70")
+m70concat(path, id = "name", fileFormat = "m70")
 }
 \arguments{
 \item{path}{Path to the files to concatenate}
 
 \item{id}{defaut is "name" and add a file id (the actual name of the file)}
 
-\item{inFormat}{choose the input format of the files "m70" or "csv"}
+\item{fileFormat}{choose the input format of the files "m70" or "csv"}
 }
 \description{
 This function Concat CO2 files either csv or m70

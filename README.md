@@ -43,6 +43,7 @@ Allow to select the data you want for the regression, throught a "selection file
 * end: Number of point you want to discard at the end of the measurement
 * other: Line number of single(s) value(s) to remove (separated by "-")
 * state: Useless for now, leave blank
+
 You probably want to iterate with pdfplot until you are satisfied with the regression.
 
 ```r
@@ -93,6 +94,8 @@ You might just want to convert a bunch of m70 to csv : 
 ```r
 m70tocsv("path/to/m70/directory")
 ```
+
+below this point is a personnal reminder for me, you don't need read further to use the package.
 
 ***
 
