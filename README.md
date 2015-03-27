@@ -17,7 +17,8 @@ devtools::install_github("dangelob/m70r")
 
 The starting point is that you have a directory full of *.m70 file.
 
-### The `m70setup` function allow to read all the files and concatenate them. 
+### The `m70setup()` function
+allow to read all the files and concatenate them. 
 ```r
 df <- m70setup("path/to/m70/directory")
 ```
@@ -25,7 +26,8 @@ During the process a function check if the file name have the hours written as f
 "8_00" will became "08_00"
 
 
-### The `pdfdplot` function generate diagnostic plots based on the files. 
+### The `pdfdplot()` function
+generate diagnostic plots based on the files. 
 ```r
 pdfdplot(df)
 ```
@@ -34,7 +36,8 @@ Optionnal (but you probably want to use them !):
     * outname = custom name for the file (default: "diagPlot.pdf"), 
     * outpath = path to directory in which you want to save the file
     
-### The `regsetup` function allow to select the data you want for the regression, throught a "selection file". The selection file is a file to specify which data points you want to dicard. There are 5 columns in the "selection file"
+### The `regsetup()` function 
+Allow to select the data you want for the regression, throught a "selection file". The selection file is a file to specify which data points you want to dicard. There are 5 columns in the "selection file"
 * fileid: The file name (as the titles of the diagnostic plots are written)
 * start: Number of point you want to discard at the beginning of the measurement
 * end: Number of point you want to discard at the end of the measurement
@@ -54,7 +57,8 @@ If you don't specify these 2 parameters and have no "selection file", the functi
 __Warning:__ For now no control are done on want you enter to this file, so double check that there is no typo or weird things might happen.
 
 __Warning:__ Consequently the csv file should use coma (",") as field separator and dots (".") as decimal point.
-* The `extrcFlux` function do the regression (linear, OLS) and extract flux (the slope).
+* The `extrcFlux()` function 
+do the regression (linear, OLS) and extract flux (the slope).
 ```r
 extrcFlux(df)
 ```
@@ -69,7 +73,8 @@ The function will return a data.frame containing the following elements:
     * pvalue: the p-value of the regression
     * mtime: the measurement time during which the regression is done (in seconds)
 
-### The `getNF` function calculate a net flux based on chamber caracteristics
+### The `getNF()` function
+calculate a net flux based on chamber caracteristics
 ```r
 getNF(RF = 3.4, Dchb_mm = 300, Hchb_mm = 300, Patm = 101300, T_Cel = 25)
 ```
