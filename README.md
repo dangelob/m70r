@@ -21,6 +21,10 @@ The starting point is that you have a directory full of *.m70 file.
 ```r
 df <- m70setup("path/to/m70/directory")
 ```
+During the process a function check if the file name have the hours written as follow : HH_MM and if not make a correction:
+"8_00" will became "08_00"
+
+
 * The `pdfdplot` function generate diagnostic plots based on the files. 
 ```r
 pdfdplot(df)
