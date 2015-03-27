@@ -61,15 +61,15 @@ extrcFlux(df)
 ```
 The function will return a data.frame containing the following elements:
 
-** filename: the source file of the treated measurement
-** rawCO2F: the slope of the linear regression (the raw fluxes)
-** R2: the coefficient of determination
-** temperature: the mean temperature from the HMP75 probe
-** temp_sd: the standard deviation of the temperature from the HMP75 probe
-** RH: the relative humidity from the HMP75 probe
-** RH_sd: the standar deviation of the temperature from the HMP75 probe
-** pvalue: the p-value of the regression
-** mtime: the measurement time during which the regression is done (in seconds)
+    * filename: the source file of the treated measurement
+    * rawCO2F: the slope of the linear regression (the raw fluxes)
+    * R2: the coefficient of determination
+    * temperature: the mean temperature from the HMP75 probe
+    * temp_sd: the standard deviation of the temperature from the HMP75 probe
+    * RH: the relative humidity from the HMP75 probe
+    * RH_sd: the standar deviation of the temperature from the HMP75 probe
+    * pvalue: the p-value of the regression
+    * mtime: the measurement time during which the regression is done (in seconds)
 
 * The `getNF` function calculate a net flux based on chamber caracteristics
 ```r
