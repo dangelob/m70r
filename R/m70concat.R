@@ -4,18 +4,18 @@
 #'
 #' @param path Path to the files to concatenate
 #' @param id defaut is "name" and add a file id (the actual name of the file)
-#' @param inFormat choose the input format of the files "m70" or "csv"
+#' @param fileFormat choose the input format of the files "m70" or "csv"
 
 # TODO: insert an id for each file processed
 # TO THINK: The write option seems useless... if people want to write it they can do it themselves éventullement à garder comme débug... et encore
 
-m70concat <- function(path, id="name", inFormat="m70"){
+m70concat <- function(path, id="name", fileFormat="m70"){
   # Check path format if there is an "/" at the end or not
   path <- chk_eop(path)
   
-  if (inFormat == "csv"){
+  if (fileFormat == "csv"){
     file_list <- list.files(path, pattern="*.csv", full.names=TRUE)
-  }else if (inFormat == "m70"){
+  }else if (fileFormat == "m70"){
     file_list <- list.files(path, pattern="*.m70", full.names=TRUE)
   }else{
     cat("unknown format \n")
@@ -26,7 +26,7 @@ m70concat <- function(path, id="name", inFormat="m70"){
   # Create a list of list which will contain the data 
   ls <- rep(list(list()), length(file_list)) 
   
-  if(inFormat=="csv"){    
+  if(fileFormat=="csv"){    
     # If we want to insert an ID for each file
     if(id == "name"){
       for (fileid in seq_along(file_list)){
@@ -39,7 +39,7 @@ m70concat <- function(path, id="name", inFormat="m70"){
     }else{
       ls[[fileid]] <- read.csv(file_list[fileid], header=TRUE, sep=",")
     }
-  }else if (inFormat == "m70"){
+  }else if (fileFormat == "m70"){
     # If we want to insert an ID for each file
     if(id == "name"){
       for (fileid in seq_along(file_list)){
