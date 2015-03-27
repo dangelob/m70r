@@ -17,7 +17,7 @@ devtools::install_github("dangelob/m70r")
 
 The starting point is that you have a directory full of *.m70 file.
 
-* The `m70setup` function allow to read all the files and concatenate them. 
+### The `m70setup` function allow to read all the files and concatenate them. 
 ```r
 df <- m70setup("path/to/m70/directory")
 ```
@@ -25,7 +25,7 @@ During the process a function check if the file name have the hours written as f
 "8_00" will became "08_00"
 
 
-* The `pdfdplot` function generate diagnostic plots based on the files. 
+### The `pdfdplot` function generate diagnostic plots based on the files. 
 ```r
 pdfdplot(df)
 ```
@@ -34,20 +34,19 @@ Optionnal (but you probably want to use them !):
     * outname = custom name for the file (default: "diagPlot.pdf"), 
     * outpath = path to directory in which you want to save the file
     
-* The `regsetup` function allow to select the data you want for the regression, throught a "selection file". The selection file is a file to specify which data points you want to dicard. There are 5 columns in the "selection file"
-    * fileid: The file name (as the titles of the diagnostic plots are written)
-    * start: Number of point you want to discard at the beginning of the measurement
-    * end: Number of point you want to discard at the end of the measurement
-    * other: Line number of single(s) value(s) to remove (separated by "-")
-    * state: Useless for now, leave blank
+### The `regsetup` function allow to select the data you want for the regression, throught a "selection file". The selection file is a file to specify which data points you want to dicard. There are 5 columns in the "selection file"
+* fileid: The file name (as the titles of the diagnostic plots are written)
+* start: Number of point you want to discard at the beginning of the measurement
+* end: Number of point you want to discard at the end of the measurement
+* other: Line number of single(s) value(s) to remove (separated by "-")
+* state: Useless for now, leave blank
 You probably want to iterate with pdfplot until you are satisfied with the regression.
 
 ```r
 regsetup(df, path="path/to/regselection/file", file="regselectionfilename")
 ```
 
-Optionnal (but you also probably want to use them !):
-
+* Optionnal (but you also probably want to use them !):
     * path = "path/to/directory" (the working directory by default)
     * file = "filename" (regselection.csv by default)
 If you don't specify these 2 parameters and have no "selection file", the function is going to create one for you with the default parameters.  
@@ -60,7 +59,6 @@ __Warning:__ Consequently the csv file should use coma (",") as field separator 
 extrcFlux(df)
 ```
 The function will return a data.frame containing the following elements:
-
     * filename: the source file of the treated measurement
     * rawCO2F: the slope of the linear regression (the raw fluxes)
     * R2: the coefficient of determination
@@ -71,10 +69,12 @@ The function will return a data.frame containing the following elements:
     * pvalue: the p-value of the regression
     * mtime: the measurement time during which the regression is done (in seconds)
 
-* The `getNF` function calculate a net flux based on chamber caracteristics
+### The `getNF` function calculate a net flux based on chamber caracteristics
 ```r
 getNF(RF = 3.4, Dchb_mm = 300, Hchb_mm = 300, Patm = 101300, T_Cel = 25)
 ```
+
+### Other functions
 
 You might just want to convert a bunch of m70 to csv : 
 ```r
