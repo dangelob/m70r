@@ -48,8 +48,7 @@ extrcFlux <- function(df){
     j <- j + 1
     wdf <- NULL
     wdf <- df[which(df$fileid == i),]
-    wdf$tps <- posixctTOsec(wdf$timestamp)
-    
+     
     m <- lm(wdf$CO2~wdf$tps)
     
     filename <- i
