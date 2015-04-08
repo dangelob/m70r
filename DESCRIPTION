@@ -3,8 +3,8 @@ Type: Package
 Title: Easy m70 files treatement
 Version: 0.2
 Date: 2014-08-31
-Author: Benoît D'Angelo
-Maintainer: Benoît D'Angelo <dev@dangelob.eu>
+Author: Benoit D'Angelo
+Maintainer: Benoit D'Angelo <dev@dangelob.eu>
 Description: This package provides some (hopefully) useful tools to process m70
     data files.
 Depends: R (>= 3.1.0)
